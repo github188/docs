@@ -1,0 +1,22 @@
+git config --global user.name 'yinqisheng'
+
+git config --global user.email 'yinqisheng@gw.com.cn'
+
+git remote set-url origin http://yinqisheng@git.gw.com.cn:7990/scm/crmr/crm-repo.git
+
+git remote add origin https://github.com/logyin/panku.git
+git push -u origin master
+
+
+删除远程分支（分支名前有空格）
+git push origin :branch-name
+
+删除本地分支：
+git branch -D 分支名
+
+生成ssh公钥，记住密码（https clone代码时）
+ssh-keygen -t rsa -C "name.cn"
+
+
+
+

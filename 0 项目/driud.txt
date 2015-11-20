@@ -1,0 +1,4 @@
+
+driud console
+
+http://10.15.108.227:9090/GwInetAct/druid/sql.html

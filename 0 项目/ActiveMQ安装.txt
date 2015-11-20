@@ -1,0 +1,40 @@
+说明：如果ActiveMQ的管理页面不能访问，有可能是linux防火墙关闭了。查看命令：service iptables status
+
+
+ActiveMQ管理页面：
+http://10.15.201.22:8161/admin/
+用户名&密码：admin
+
+ActiveMQ安装路径：/opt/apache-activemq-5.9.1
+（后台）启动：
+cd /bin
+nohup ./activemq start
+
+===============================================
+安装步骤：
+
+tar -xzvf apache-activemq-5.9.1-bin.tar.gz
+
+chmod 755 bin/activemq 
+
+./activemq start
+./activemq start >> tmp/log
+nohup ./activemq start  >> tmp/log
+前两种方式下在命令行窗口关闭时或者ctrl+c时导致进程退出，采用后台启动方式则可以避免这种情况
+
+ActiveMQ默认采用61616端口提供JMS服务，使用8161端口提供管理控制台服务，执行以下命令以便检验是否已经成功启动ActiveMQ服务。
+打开端口：nc -lp 61616 &
+netstat -lnp|grep 61616
+查看哪些端口被打开 netstat -anp
+查看61616端口是否打开： netstat -an | grep 61616
+检查是否已经启动：
+(1).查看控制台输出或者日志文件 
+(2).直接访问activemq的管理页面：http://localhost:8161/admin/
+
+8.关闭
+如果开启方式是使用(1)或(2)，则直接ctrl+c或者关闭对应的终端即可 
+如果开启方式是(3),则稍微麻烦一点： 
+先查找到activemq对应的进程： 
+ps -ef | grep activemq 
+然后把对应的进程杀掉，假设找到的进程编号为 168168 
+kill 168168 
