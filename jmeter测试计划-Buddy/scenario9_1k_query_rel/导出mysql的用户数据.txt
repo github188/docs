@@ -1,0 +1,9 @@
+select count(1) from T_USER_ACTIVITY  where USER_ID like 'wxfriend_%' ORDER BY USER_ID;
+
+select RECEIVE_CODE from T_USER_ACTIVITY  where USER_ID like 'wxfriend_1%' ORDER BY USER_ID aSC limit 1000;
+
+update T_USER_ACTIVITY set ID_INET_ACTIVITY='7' where USER_ID like 'wxfriend_%' ;
+
+select count(1) from T_USER_ACTIVITY_RECEIVE  where RECEIVE_USER_ID like 'wxfriend_%' ORDER BY RECEIVE_USER_ID;
+
+select user_id as userid, ID_USER_ACTIVITY as id from T_USER_ACTIVITY where ID_USER_ACTIVITY in (SELECT ID_USER_ACTIVITY from T_USER_ACTIVITY_RECEIVE  where RECEIVE_USER_ID like 'wxfriend_%' ORDER BY RECEIVE_USER_ID asc) ORDER BY id asc limit 1000;

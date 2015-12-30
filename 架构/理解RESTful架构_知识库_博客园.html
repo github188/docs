@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://kb.cnblogs.com/page/114905/ -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=1">
+    <title>理解RESTful架构_知识库_博客园</title>
+    
+<meta name="keywords" content="REST,理解RESTful架构">
+    <link rel="shortcut icon" href="http://static.cnblogs.com/favicon.ico">
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="http://feed.cnblogs.com/kb/">
+    <link href="http://kb.cnblogs.com/style/common.css" rel="stylesheet">
+    <script type="text/javascript" async="" src="./理解RESTful架构_知识库_博客园_files/ga.js"></script><script async="" type="text/javascript" src="./理解RESTful架构_知识库_博客园_files/gpt.js"></script><script src="./理解RESTful架构_知识库_博客园_files/jquery.js" type="text/javascript"></script>
+    <script src="./理解RESTful架构_知识库_博客园_files/common.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        (function () {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            gads.src = 'http://common.cnblogs.com/script/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        })();
+    </script>
+    <script type="text/javascript">
+        googletag.cmd.push(function () {
+            googletag.defineSlot('/1090369/kb_k1', [728, 90], 'div-gpt-ad-1320920372773-0').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/kb_k2', [300, 250], 'div-gpt-ad-1320920372773-1').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/kb_k3', [300, 250], 'div-gpt-ad-1320920372773-2').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/kb_K4', [468, 60], 'div-gpt-ad-1320994977668-0').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+<link type="text/css" rel="stylesheet" href="./理解RESTful架构_知识库_博客园_files/detail.css">
+<link type="text/css" rel="stylesheet" href="./理解RESTful架构_知识库_博客园_files/shStyle.css">
+<script type="text/javascript">
+    var contentId = 114905;
+</script>
+<script type="text/javascript" src="./理解RESTful架构_知识库_博客园_files/detail.js"></script>
+<script type="text/javascript" src="./理解RESTful架构_知识库_博客园_files/syntaxHighlighter.js"></script>
+<script async="" type="text/javascript" src="./理解RESTful架构_知识库_博客园_files/pubads_impl_27.js"></script><script type="text/javascript" src="./理解RESTful架构_知识库_博客园_files/osd.js"></script></head>
+<body>
+    <div id="hd_info">
+        <div id="site_nav"><a href="http://www.cnblogs.com/" title="程序员的网上家园">首页</a><a href="http://news.cnblogs.com/">新闻</a><a href="http://q.cnblogs.com/">博问</a><a href="http://home.cnblogs.com/ing/">闪存</a><a href="http://job.cnblogs.com/">招聘</a><a href="http://home.cnblogs.com/">园子</a></div>
+        <div id="login_area">[<a href="http://kb.cnblogs.com/page/114905/#" onclick="login();return false">登录</a>·<a href="http://kb.cnblogs.com/page/114905/#" onclick="register();return false">注册</a>]</div>
+        <div class="clear"></div>
+    </div>    
+    <div id="wrapper">
+        <div id="header">
+            <div class="logo"><a href="http://kb.cnblogs.com/">
+                <img src="./理解RESTful架构_知识库_博客园_files/kblogo.gif" alt="知识库"></a></div>
+            <div class="banner">
+                <!-- kb_k1 -->
+                <div id="div-gpt-ad-1320920372773-0" style="width: 728px; height: 90px;" class="banner">
+                    <script type="text/javascript">
+                        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1320920372773-0'); });
+                    </script>
+                <iframe id="google_ads_iframe_/1090369/kb_k1_0" name="google_ads_iframe_/1090369/kb_k1_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:"<html><body style='background:transparent'></body></html>"" style="border: 0px; vertical-align: bottom;"></iframe><iframe id="google_ads_iframe_/1090369/kb_k1_0__hidden__" name="google_ads_iframe_/1090369/kb_k1_0__hidden__" width="0" height="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:"<html><body style='background:transparent'></body></html>"" style="border: 0px; vertical-align: bottom; visibility: hidden; display: none;"></iframe></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="nav_zone">
+            <span class="nav">
+                <a href="http://kb.cnblogs.com/" class="nobg">知识库</a>
+                <a href="http://kb.cnblogs.com/zt/">专题</a>
+                <a href="http://kb.cnblogs.com/list/1001/">.NET技术</a>
+                <a href="http://kb.cnblogs.com/list/1002/">Web前端</a>
+                <a href="http://kb.cnblogs.com/list/1008/" class="current">软件设计</a>
+                <a href="http://kb.cnblogs.com/list/1016/">手机开发</a>
+                <a href="http://kb.cnblogs.com/list/1004/">软件工程</a>
+                <a href="http://kb.cnblogs.com/list/1011/">程序人生</a>
+                <a href="http://kb.cnblogs.com/list/1009/">项目管理</a>
+                <a href="http://kb.cnblogs.com/list/1003/">数据库</a>
+                <a href="http://home.cnblogs.com/kb/">最新文章</a>
+            </span>
+        </div>
+        <div class="clear"></div>
+<div id="guide_detail">
+	<div id="guide_de">
+		<strong style="color:#454545;font-size:12px;">您的位置：</strong><a href="http://kb.cnblogs.com/">知识库</a> » <a href="http://kb.cnblogs.com/list/1008/">软件设计</a>	
+	</div>
+</div>
+<div id="main_content">    
+	<div id="left_content">
+		<div id="left_content_pages">
+			<h1 class="contents_header"><a href="./理解RESTful架构_知识库_博客园_files/理解RESTful架构_知识库_博客园.html">理解RESTful架构</a></h1>
+			<div class="contents_info">
+				作者: 阮一峰&nbsp;&nbsp;发布时间: 2011-09-13 13:35&nbsp;&nbsp;阅读: 49563 次&nbsp;&nbsp;推荐: 40&nbsp;&nbsp;
+                <a id="link_source" href="http://www.ruanyifeng.com/blog/2011/09/restful.html" target="_blank">原文链接</a>&nbsp;&nbsp;
+				<a href="javascript:add_to_wz()" class="graylink">[收藏]</a>&nbsp;&nbsp;
+			</div>
+			<div class="contents_main">
+				<div id="ArticleCnt">
+					<p>　　越来越多的人开始意识到，<strong>网站即软件</strong>，而且是一种新型的软件。</p>
+<p>　　这种"互联网软件"采用客户端/服务器模式，建立在分布式体系上，通过互联网通信，具有高延时（high latency）、高并发等特点。</p>
+<p>　　网站开发，完全可以采用软件开发的模式。但是传统上，软件和网络是两个不同的领域，很少有交集；软件开发主要针对单机环境，网络则主要研究系统之间的通信。互联网的兴起，使得这两个领域开始融合，<strong>现在我们必须考虑，如何开发在互联网环境中使用的软件。</strong></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="./理解RESTful架构_知识库_博客园_files/2011091221085969.jpg" alt=""></p>
+<p>　　RESTful架构，就是目前最流行的一种互联网软件架构。它结构清晰、符合标准、易于理解、扩展方便，所以正得到越来越多网站的采用。</p>
+<p>　　但是，到底什么是RESTful架构，并不是一个容易说清楚的问题。下面，我就谈谈我理解的RESTful架构。</p>
+<p><strong>　　一、起源</strong></p>
+<p>　　REST这个词，是<a href="http://en.wikipedia.org/wiki/Roy_Fielding" target="_blank">Roy Thomas Fielding</a>在他2000年的<a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm" target="_blank">博士论文</a>中提出的。</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="./理解RESTful架构_知识库_博客园_files/2011091221091356.jpg" alt=""></p>
+<p>　　Fielding是一个非常重要的人，他是HTTP协议（1.0版和1.1版）的主要设计者、Apache服务器软件的作者之一、Apache基金会的第一任主席。所以，他的这篇论文一经发表，就引起了关注，并且立即对互联网开发产生了深远的影响。</p>
+<p>　　他这样介绍论文的写作目的：</p>
+<blockquote>
+<p>"本文研究计算机科学两大前沿----软件和网络----的交叉点。长期以来，软件研究主要关注软件设计的分类、设计方法的演化，很少客观地评估不同的设计选择对系统行为的影响。而相反地，网络研究主要关注系统之间通信行为的细节、如何改进特定通信机制的表现，常常忽视了一个事实，那就是改变应用程序的互动风格比改变互动协议，对整体表现有更大的影响。<strong>我这篇文章的写作目的，就是想在符合架构原理的前提下，理解和评估以网络为基础的应用软件的架构设计，得到一个功能强、性能好、适宜通信的架构。</strong>"</p>
+<p>(This dissertation explores a junction on the frontiers of two research disciplines in computer science: software and networking. Software research has long been concerned with the categorization of software designs and the development of design methodologies, but has rarely been able to objectively evaluate the impact of various design choices on system behavior. Networking research, in contrast, is focused on the details of generic communication behavior between systems and improving the performance of particular communication techniques, often ignoring the fact that changing the interaction style of an application can have more impact on performance than the communication protocols used for that interaction. My work is motivated by the desire to understand and evaluate the architectural design of network-based application software through principled use of architectural constraints, thereby obtaining the functional, performance, and social properties desired of an architecture. )</p>
+</blockquote>
+<p><strong>　　二、名称</strong></p>
+<p>　　Fielding将他对互联网软件的架构原则，定名为REST，即Representational State Transfer的缩写。我对这个词组的翻译是"表现层状态转化"。</p>
+<p>　　如果一个架构符合REST原则，就称它为RESTful架构。</p>
+<p><strong>　　要理解RESTful架构，最好的方法就是去理解Representational State Transfer这个词组到底是什么意思，它的每一个词代表了什么涵义。</strong>如果你把这个名称搞懂了，也就不难体会REST是一种什么样的设计。</p>
+<p><strong>　　三、资源（Resources）</strong></p>
+<p>　　REST的名称"表现层状态转化"中，省略了主语。"表现层"其实指的是"资源"（Resources）的"表现层"。</p>
+<p><strong>　　所谓"资源"，就是网络上的一个实体，或者说是网络上的一个具体信息。</strong>它可以是一段文本、一张图片、一首歌曲、一种服务，总之就是一个具体的实体。你可以用一个URI（统一资源定位符）指向它，每种资源对应一个特定的URI。要获取这个资源，访问它的URI就可以，因此URI就成了每一个资源的地址或独一无二的识别符。</p>
+<p>　　所谓"上网"，就是与互联网上一系列的"资源"互动，调用它的URI。</p>
+<p><strong>　　四、表现层（Representation）</strong></p>
+<p>　　"资源"是一种信息实体，它可以有多种外在表现形式。<strong>我们把"资源"具体呈现出来的形式，叫做它的"表现层"（Representation）。</strong></p>
+<p>　　比如，文本可以用txt格式表现，也可以用HTML格式、XML格式、JSON格式表现，甚至可以采用二进制格式；图片可以用JPG格式表现，也可以用PNG格式表现。</p>
+<p>　　URI只代表资源的实体，不代表它的形式。严格地说，有些网址最后的".html"后缀名是不必要的，因为这个后缀名表示格式，属于"表现层"范畴，而URI应该只代表"资源"的位置。它的具体表现形式，应该在HTTP请求的头信息中用Accept和Content-Type字段指定，这两个字段才是对"表现层"的描述。</p>
+<p><strong>　　五、状态转化（State Transfer）</strong></p>
+<p>　　访问一个网站，就代表了客户端和服务器的一个互动过程。在这个过程中，势必涉及到数据和状态的变化。</p>
+<p>　　互联网通信协议HTTP协议，是一个无状态协议。这意味着，所有的状态都保存在服务器端。因此，<strong>如果客户端想要操作服务器，必须通过某种手段，让服务器端发生"状态转化"（State Transfer）。而这种转化是建立在表现层之上的，所以就是"表现层状态转化"。</strong></p>
+<p>　　客户端用到的手段，只能是HTTP协议。具体来说，就是HTTP协议里面，四个表示操作方式的动词：GET、POST、PUT、DELETE。它们分别对应四种基本操作：<strong>GET用来获取资源，POST用来新建资源（也可以用于更新资源），PUT用来更新资源，DELETE用来删除资源。</strong></p>
+<p><strong>　　六、综述</strong></p>
+<p>　　综合上面的解释，我们总结一下什么是RESTful架构：</p>
+<p>　　（1）每一个URI代表一种资源；</p>
+<p>　　（2）客户端和服务器之间，传递这种资源的某种表现层（Representation）；</p>
+<p>　　（3）客户端通过四个HTTP动词，对服务器端资源进行操作，实现"表现层状态转化"。</p>
+<p><strong>　　七、误区</strong></p>
+<p>　　RESTful架构有一些典型的设计误区。</p>
+<p><strong>　　最常见的一种设计错误，就是URI包含动词。</strong>因为"资源"表示一种实体，所以应该是名词，URI不应该有动词，动词应该放在HTTP协议中。</p>
+<p>　　举例来说，某个URI是/posts/show/1，其中show是动词，这个URI就设计错了，正确的写法应该是/posts/1，然后用GET方法表示show。</p>
+<p>　　如果某些动作是HTTP动词表示不了的，你就应该把动作做成一种资源。比如网上汇款，从账户1向账户2汇款500元，错误的URI是：</p>
+<blockquote>
+<p>　　POST /accounts/1/transfer/500/to/2</p>
+</blockquote>
+<p>　　正确的写法是把动词transfer改成名词transaction，资源不能是动词，但是可以是一种服务：</p>
+<blockquote>
+<p>　　POST /transaction HTTP/1.1<br>　　Host: 127.0.0.1<br>　　<br>　　from=1&amp;to=2&amp;amount=500.00</p>
+</blockquote>
+<p><strong>　　另一个设计误区，就是在URI中加入版本号</strong>：</p>
+<blockquote>
+<p>　　http://www.example.com/app/1.0/foo</p>
+<p>　　http://www.example.com/app/1.1/foo</p>
+<p>　　http://www.example.com/app/2.0/foo</p>
+</blockquote>
+<p>　　因为不同的版本，可以理解成同一种资源的不同表现形式，所以应该采用同一个URI。版本号可以在HTTP请求头信息的Accept字段中进行区分（参见<a href="http://www.informit.com/articles/article.aspx?p=1566460" target="_blank">Versioning REST Services</a>）：</p>
+<blockquote>
+<p>　　Accept: vnd.example-com.foo+json; version=1.0</p>
+<p>　　Accept: vnd.example-com.foo+json; version=1.1</p>
+<p>　　Accept: vnd.example-com.foo+json; version=2.0</p>
+</blockquote>
+				</div>				
+			</div>
+            <div id="content_bottom">
+            <div id="div_digg">										
+	            <div class="diggit" onclick="voteArticle(contentId,&#39;Digg&#39;)"> 
+		            <span class="diggnum" id="digg_count">40</span>
+	            </div>
+	            <div class="buryit" onclick="voteArticle(contentId,&#39;Bury&#39;)"> 
+		            <span class="burynum" id="bury_count">0</span>
+	            </div>
+	            <div class="clear"></div>	
+	            <div id="digg_tips" class="digg-tips">&nbsp;</div>	
+            </div>
+		    <div id="panelTags">
+	<div class="tag">标签： <a href="http://kb.cnblogs.com/tag/REST/" class="catalink">REST</a> &nbsp;&nbsp;</div>
+</div>	           
+			<div class="prevnextblock">
+				<a href="http://kb.cnblogs.com/page/112298/">« </a>上一篇：<a href="http://kb.cnblogs.com/page/112298/">领域驱动设计和实践</a><br><a href="http://kb.cnblogs.com/page/117152/">» </a>下一篇：<a href="http://kb.cnblogs.com/page/117152/">架构妄想：AJAX + REST</a>
+			</div>   
+			<div id="article_A4area">
+				<span id="shareA4" class="fl">
+				</span>
+			</div>
+            <div class="ad_bottom">
+                <!-- kb_K4 -->
+                <div id="div-gpt-ad-1320994977668-0" style="width:468px; height:60px;">
+                <script type="text/javascript">
+                    googletag.cmd.push(function () { googletag.display('div-gpt-ad-1320994977668-0'); });
+                </script>
+                <iframe id="google_ads_iframe_/1090369/kb_K4_0" name="google_ads_iframe_/1090369/kb_K4_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:"<html><body style='background:transparent'></body></html>"" style="border: 0px; vertical-align: bottom;"></iframe></div>
+            </div>			
+            </div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$("#link_source").attr("href", "http://www.ruanyifeng.com/blog/2011/09/restful.html");
+		$("#link_source").attr("target", "_blank");
+	</script>
+	<div id="right_content">
+		<div class="rt_cnt">
+			<div class="list_rt_mid" style="text-align:center">
+                <!-- kb_k2 -->
+                <div id="div-gpt-ad-1320920372773-1" style="width:300px; height:250px;">
+                <script type="text/javascript">
+                    googletag.cmd.push(function () { googletag.display('div-gpt-ad-1320920372773-1'); });
+                </script>
+                <iframe id="google_ads_iframe_/1090369/kb_k2_0" name="google_ads_iframe_/1090369/kb_k2_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:"<html><body style='background:transparent'></body></html>"" style="border: 0px; vertical-align: bottom;"></iframe></div>
+			</div>
+	</div>
+<div id="side_right_search">           
+<input type="text" id="google_search_q" size="27" onkeydown="return google_search_enter(event);">
+<input type="button" id="search_button" value="搜索文章" onclick="google_search();">
+</div>
+<div class="rt_cnt">
+	<div class="list_rt_top"><h3>推荐链接</h3></div>
+	<ul class="sr_list" id="side_adtext">
+    <li><a href="http://job.cnblogs.com/" target="_blank">程序员找工作，就在博客园招聘频道</a></li>
+    <li><a target="_blank" href="http://q.cnblogs.com/">程序员问答平台，解决您的技术难题</a></li>
+    <li><a href="https://itunes.apple.com/cn/app/zhi-shi-ku/id686381534" target="_blank">知识库iPad App，期待您的体验</a></li>
+	</ul>
+</div>
+        <div id="right_content_list"><div class="rt_cnt"><div class="list_rt_top"><h3>软件设计热门文章</h3></div><ul class="sr_list"><li><a href="http://kb.cnblogs.com/page/129491/" target="_blank">UML用例图总结</a></li><li><a href="http://kb.cnblogs.com/page/45266/" target="_blank">深度理解依赖注入</a></li><li><a href="./理解RESTful架构_知识库_博客园_files/理解RESTful架构_知识库_博客园.html" target="_blank">理解RESTful架构</a></li><li><a href="http://kb.cnblogs.com/page/99549/" target="_blank">一步步构建大型网站架构</a></li><li><a href="http://kb.cnblogs.com/page/79172/" target="_blank">几种开源工作流引擎的简单比较</a></li></ul></div><div class="rt_cnt"><div class="list_rt_top"><h3>软件设计最新文章</h3></div><ul class="sr_list"><li><a href="http://kb.cnblogs.com/page/527814/" target="_blank">从涂鸦到发布——理解API的设计过程</a></li><li><a href="http://kb.cnblogs.com/page/531834/" target="_blank">好的架构是进化来的，不是设计来的</a></li><li><a href="http://kb.cnblogs.com/page/530046/" target="_blank">再谈设计和编码</a></li><li><a href="http://kb.cnblogs.com/page/519485/" target="_blank">软件设计杂谈</a></li><li><a href="http://kb.cnblogs.com/page/512047/" target="_blank">RESTful架构详解</a></li></ul></div><div class="rt_cnt"><div class="list_rt_top"><h3>最新新闻</h3></div><ul class="sr_list"><li><a href="http://news.cnblogs.com/n/534388/" target="_blank">宜人贷CTO段念：透明与面向目标是管理理念的核心</a></li><li><a href="http://news.cnblogs.com/n/534387/" target="_blank">苹果地图统治iPhone 使用量为谷歌地图三倍</a></li><li><a href="http://news.cnblogs.com/n/534386/" target="_blank">“我的世界”这款游戏到底有多孤独？</a></li><li><a href="http://news.cnblogs.com/n/534385/" target="_blank">新视野号最近距离拍柯伊柏带神秘天体图像</a></li><li><a href="http://news.cnblogs.com/n/534384/" target="_blank">消息称谷歌重返中国包含网页搜索</a></li></ul></div><div class="rt_cnt"><div class="list_rt_top"><h3>热门新闻</h3></div><ul class="sr_list"><li><a href="http://news.cnblogs.com/n/533848/" target="_blank">程序猿也疯狂：一款插件给写代码带来的超爽视觉震撼</a></li><li><a href="http://news.cnblogs.com/n/533967/" target="_blank">中国软件百强一丁集团破产 跑路老板：永远别跟银行借钱</a></li><li><a href="http://news.cnblogs.com/n/534002/" target="_blank">凤姐加入“天使投资人”行列 公开约战董明珠</a></li><li><a href="http://news.cnblogs.com/n/534107/" target="_blank">ASP.NET 5 and .NET Core RC准备投入使用</a></li><li><a href="http://news.cnblogs.com/n/533961/" target="_blank">12.3日 PHP 7！鸟哥：写在PHP 7发布之际</a></li></ul></div></div>
+        <script type="text/javascript">
+	        LoadSideRightList(1008,'软件设计');
+        </script>
+        <div class="rt_cnt">
+		        <div class="list_rt_mid" style="text-align:center">
+                    <!-- kb_k3 -->
+                    <div id="div-gpt-ad-1320920372773-2" style="width:300px; height:250px;">
+                    <script type="text/javascript">
+                        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1320920372773-2'); });
+                    </script>
+                    <iframe id="google_ads_iframe_/1090369/kb_k3_0" name="google_ads_iframe_/1090369/kb_k3_0" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="javascript:"<html><body style='background:transparent'></body></html>"" style="border: 0px; vertical-align: bottom;"></iframe></div>
+		        </div>
+        </div>
+	</div>
+	<script type="text/javascript">
+	    try {
+	        $(function () {
+	            SyntaxHighlighter.all();
+	        });
+	    }
+	    catch (e) { }
+	</script> 
+</div>     
+        <div class="clear"></div>
+        <div id="footer">
+            <a href="http://www.cnblogs.com/AboutUS.aspx">关于我们</a><a href="http://www.cnblogs.com/ContactUs.aspx">联系我们</a><a href="http://www.cnblogs.com/ad.aspx">广告服务</a><a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备09004260号</a>　© 2015<a href="http://www.cnblogs.com/">博客园</a><a title="订阅知识库文章" target="_blank" href="http://feed.cnblogs.com/kb/"><img src="./理解RESTful架构_知识库_博客园_files/rss.png" alt="RSS"></a>
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-476124-11']);
+                _gaq.push(['_trackPageview']);
+                (function () {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
+        </div>
+    </div>
+
+<iframe id="google_osd_static_frame_6052380159962" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body></html>

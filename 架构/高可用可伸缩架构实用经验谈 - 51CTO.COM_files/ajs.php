@@ -1,0 +1,3 @@
+var OX_7dd27ccf = '';
+OX_7dd27ccf += "<"+"a href=\'//gg2.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=2644__zoneid=254__cb=dd9f62b3db__oadest=http%3A%2F%2Fgaozhao.51cto.com%2F\' target=\'_blank\'><"+"font color=\'red\'>51CTO高招专注技术人才招聘<"+"/font><"+"/a><"+"div id=\'beacon_dd9f62b3db\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'//gg1.51cto.com/www/delivery/lg.php?bannerid=2644&amp;campaignid=531&amp;zoneid=254&amp;loc=1&amp;referer=http%3A%2F%2Fdeveloper.51cto.com%2Fart%2F201509%2F492281.htm&amp;cb=dd9f62b3db\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div>\n";
+document.write(OX_7dd27ccf);
