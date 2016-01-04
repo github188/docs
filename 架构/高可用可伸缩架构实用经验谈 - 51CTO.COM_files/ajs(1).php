@@ -1,3 +1,0 @@
-var OX_613e86d7 = '';
-OX_613e86d7 += "<"+"a href=\'//gg1.51cto.com/www/delivery/ck.php?oaparams=2__bannerid=2924__zoneid=255__cb=449741e373__oadest=http%3A%2F%2Fbbs.hc3i.cn%2Fviewthread.php%3Ftid%3D157969%26page%3D1%26extra%3D%23pid491552\' target=\'_blank\'><"+"font color=\'red\'>反统方大讨论 精美礼品等你拿<"+"/font><"+"/a><"+"div id=\'beacon_449741e373\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'//gg2.51cto.com/www/delivery/lg.php?bannerid=2924&amp;campaignid=657&amp;zoneid=255&amp;loc=1&amp;referer=http%3A%2F%2Fdeveloper.51cto.com%2Fart%2F201509%2F492281.htm&amp;cb=449741e373\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div>\n";
-document.write(OX_613e86d7);
